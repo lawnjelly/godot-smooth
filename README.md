@@ -3,6 +3,8 @@ Fixed timestep interpolation helper nodes for Godot, 3D and 2D
 
 This a module for Godot engine (3.2 master, 19 July 2019 or later) giving two new node types, Smooth and Smooth2d.
 
+https://www.youtube.com/watch?v=lWhHBAcH4sM
+
 **Installation**
 To install you will need to compile Godot from source:
 
