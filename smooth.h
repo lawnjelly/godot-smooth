@@ -26,9 +26,7 @@
 	@author lawnjelly <lawnjelly@gmail.com>
 */
 
-
 #include "scene/3d/spatial.h"
-
 
 // Smooth node allows fixed timestep interpolation without having to write any code.
 // It requires a proxy node (which is moved on physics tick), e.g. a rigid body or manually moved spatial..
@@ -42,10 +40,9 @@
 class Smooth : public Spatial {
 	GDCLASS(Smooth, Spatial);
 
-// custom
+	// custom
 private:
-	class STransform
-	{
+	class STransform {
 	public:
 		Transform m_Transform;
 		Quat m_qtRotate;
@@ -55,8 +52,7 @@ private:
 	Vector3 m_ptTranslateDiff;
 
 public:
-	enum eMethod
-	{
+	enum eMethod {
 		METHOD_SLERP,
 		METHOD_LERP,
 	};
@@ -65,14 +61,13 @@ public:
 #include "smooth_header.inl"
 #undef SMOOTHNODE
 
-
-
-// specific
+	// specific
 public:
 	Smooth();
 
 	void set_method(eMethod p_method);
 	eMethod get_method() const;
+
 private:
 	void LerpBasis(const Basis &from, const Basis &to, Basis &res, float f) const;
 };

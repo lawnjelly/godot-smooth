@@ -8,6 +8,7 @@ sources = [
 ]
 
 module_env = env.Clone()
+#module_env.Append(CXXFLAGS=['-O2', '-std=c++11'])
 
 if ARGUMENTS.get('smooth_shared', 'no') == 'yes':
     # Shared lib compilation

@@ -25,7 +25,6 @@
 	@author lawnjelly <lawnjelly@gmail.com>
 */
 
-
 #include "scene/2d/node_2d.h"
 
 // Smooth node allows fixed timestep interpolation without having to write any code.
@@ -37,13 +36,11 @@
 // 'teleport' on the smooth node after setting the proxy node transform. This will ensure that the current AND
 // previous transform records are reset, so it moves instantaneously.
 
-class Smooth2D : public Node2D
-{
+class Smooth2D : public Node2D {
 	GDCLASS(Smooth2D, Node2D);
 
 	// custom
-	class STransform
-	{
+	class STransform {
 	public:
 		Point2 pos;
 		float angle;
@@ -59,12 +56,12 @@ class Smooth2D : public Node2D
 	// specific
 public:
 	Smooth2D();
+
 private:
 	float LerpAngle(float from, float to, float weight) const;
 	float ShortAngleDist(float from, float to) const;
 };
 
 VARIANT_ENUM_CAST(Smooth2D::eMode);
-
 
 #endif
